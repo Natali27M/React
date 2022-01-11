@@ -1,5 +1,4 @@
 
-
 const User = (props) => {
     const {id, name, username, email,street,suite,city,zipcode,lat,lng,phone,website,companyName} = props;
     return (
