@@ -1,1 +1,37 @@
-
+.display {
+    display: flex;
+}
+.align {
+    align-items: center;
+}
+.flexColumn {
+    flex-direction: column;
+}
+.border {
+    border: 1px solid black;
+}
+.w100 {
+    width: 100%;
+}
+.w50 {
+    width: 50%;
+}
+.w80 {
+    width: 80%;
+}
+.spaceBetween {
+    justify-content: space-between;
+}
+.m5 {
+   margin: 5px;
+}
+.p5 {
+    padding: 5px;
+}
+.m0 {
+    margin: 0;
+}
+.styleButton {
+    width: 100px;
+    height: 40px;
+}

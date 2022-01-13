@@ -1,12 +1,18 @@
 import './App.css';
 
-const App = () => {
-  return (
-      <div>
+import Users from './components/Users/Users';
+// import Posts from './components/Posts/Posts'
 
-      </div>
-  );
+const App = () => {
+    return (
+        <div>
+            <Users/>
+            {/*<Posts/>*/}
+        </div>
+
+    );
 };
 
 export default App;
+
 
