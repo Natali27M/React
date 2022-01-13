@@ -1,6 +1,12 @@
 .display {
     display: flex;
 }
+.styleUserDetail {
+    padding-bottom: 35px;
+}
+.flex {
+   flex-wrap: wrap;
+}
 .align {
     align-items: center;
 }

@@ -1,8 +1,9 @@
-const User = ({id, name, getUserDetails}) => {
+const User = ({user, getUser}) => {
+
     return (
         <div className={'display spaceBetween m5 border p5'}>
-            {name}
-            <button onClick={() => getUserDetails(id)}>User details</button>
+            {user.name}
+            <button onClick={() => getUser(user)}>User details</button>
         </div>
     );
 };

@@ -1,11 +1,11 @@
 import {urls} from '../configs/urls';
 
 const getAll = () => {
-    fetch(urls.posts)
+    return fetch(urls.posts)
         .then(value => value.json());
 };
 const getById = (userId) => {
-    fetch(`${urls.posts}/${userId}`)
+    return fetch(`${urls.users}/${userId}/posts`)
         .then(value => value.json())
 };
 

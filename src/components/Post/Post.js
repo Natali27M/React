@@ -1,8 +1,8 @@
 
-const Post = (getUserPosts) => {
+const Post = ({post}) => {
     return (
         <div>
-           <button onClick={()=>console.log(getUserPosts)}>Get posts</button>
+            {post.id} -- {post.title}
         </div>
     );
 };
