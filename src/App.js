@@ -1,11 +1,30 @@
+import {useState} from "react";
+
 import './App.css';
+import Users from './components/Users/Users'
 
 const App = () => {
-  return (
-      <div>
+    const [form, setForm] = useState({name:'',surname:''});
 
-      </div>
-  );
+    const find = (e) => {
+        e.preventDefault();
+        console.log(<Users/>);
+    };
+
+    const formHandler = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
+    };
+
+    return (
+        <div>
+            <form onSubmit={find}>
+                <div><label>Name : <input type="text" name={'name'} value={form.name} onChange={formHandler}/></label></div>
+                <div><label>Surname : <input type="text" name={'surname'} value={form.surname} onChange={formHandler}/></label></div>
+                <button>Find</button>
+            </form>
+            <Users/>
+        </div>
+    );
 };
 
 export default App;
