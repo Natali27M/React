@@ -6,7 +6,7 @@ import UserDetails from "./components/UserDateils/UserDetails";
 import Posts from "./components/Posts/Posts";
 
 const App = () => {
-    const [user, setUser]=useState(null);
+    const [user, setUser] = useState(null);
     const [userId, setUserId] = useState(null);
 
     const getUser = (singleUser) => {
@@ -21,7 +21,7 @@ const App = () => {
         <div className={'display flex'}>
             <div className={'w50'}><Users getUser={getUser}/></div>
             <div className={'w50'}><UserDetails user={user} getUserId={getUserId}/></div>
-            <div className={'w100 border display flexColumn align'}><Posts userId={userId}/></div>
+            <div className={'w100'}><Posts userId={userId}/></div>
         </div>
 
     );

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const UserDetails = ({user, getUserId}) => {
     return (
         <div>

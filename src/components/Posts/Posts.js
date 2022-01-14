@@ -13,7 +13,7 @@ const Posts = ({userId}) => {
 
 
     return (
-        <div>
+        <div className={'display flexColumn align'}>
             {posts.map(value => <Post key={value.id} post={value}/>)}
         </div>
     );

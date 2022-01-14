@@ -1,8 +1,8 @@
-
 const Post = ({post}) => {
     return (
-        <div>
-            {post.id} -- {post.title}
+        <div className={'display flexColumn align'}>
+            <h4 className={'m0'}>{post.id} - {post.title}</h4>
+            <p>{post.body}</p>
         </div>
     );
 };
