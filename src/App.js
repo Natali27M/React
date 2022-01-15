@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 
+import './App.css'
 import Users from './components/Users/Users'
 import Form from "./components/Form/Form";
 import {userService} from "./services/user.service";
