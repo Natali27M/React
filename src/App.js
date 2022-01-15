@@ -1,28 +1,41 @@
-// import {useState} from "react";
+import {useEffect, useState} from "react";
 
-import './App.css';
 import Users from './components/Users/Users'
+import Form from "./components/Form/Form";
+import {userService} from "./services/user.service";
+
 
 const App = () => {
-    // const [form, setForm] = useState({name:'',surname:''});
-    //
-    // const find = (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target.name.value);
-    // };
-    //
-    // const formHandler = (e) => {
-    //     setForm({...form, [e.target.name]: e.target.value});
-    // };
+    const [users, setUsers] = useState([]);
+    const [filteredUsers, setFilteredUsers] = useState([]);
+
+    useEffect(() => {
+        userService.getAll().then(value => {
+            setUsers([...value])
+            setFilteredUsers([...value]);
+        });
+    }, []);
+
+    const getFilter = (data) => {
+        let filterArr = [...users];
+
+        if (data.name) {
+            filterArr = filterArr.filter(user => user.name.toLowerCase().includes(data.name.toLowerCase()));
+        }
+        if (data.username) {
+            filterArr = filterArr.filter(user => user.username.toLowerCase().includes(data.username.toLowerCase()));
+        }
+        if (data.email) {
+            filterArr = filterArr.filter(user => user.email.toLowerCase().includes(data.email.toLowerCase()));
+        }
+        setFilteredUsers(filterArr);
+
+    }
 
     return (
         <div>
-            {/*<form onSubmit={find}>*/}
-            {/*    <div><label>Name : <input type="text" name={'name'} value={form.name} onChange={formHandler}/></label></div>*/}
-            {/*    <div><label>Surname : <input type="text" name={'surname'} value={form.surname} onChange={formHandler}/></label></div>*/}
-            {/*    <button>Find</button>*/}
-            {/*</form>*/}
-            <Users/>
+            <Form getFilter={getFilter}/>
+            <Users users={filteredUsers}/>
         </div>
     );
 };

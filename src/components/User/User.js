@@ -1,7 +1,8 @@
-const User = ({name}) => {
+const User = ({user}) => {
+    const {id, name,username,email} = user;
     return (
         <div>
-            {name}
+            {id}) {name} -- {username} -- {email}
         </div>
     );
 };
