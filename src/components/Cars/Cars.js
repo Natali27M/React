@@ -41,7 +41,7 @@ export default Cars;
 
 // import {useEffect, useState} from "react";
 //
-// import {carService} from "../../services/car.service";
+// import {carService} from "../services/car.service";
 // import Car from "../Car/Car";
 //
 // const Cars = ({trigger}) => {

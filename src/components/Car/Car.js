@@ -1,7 +1,8 @@
 const Car = ({car}) => {
+    const {model} = car;
     return (
         <div>
-            {car.model}
+           <div>model:{model}</div>
         </div>
     );
 };

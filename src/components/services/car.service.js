@@ -7,7 +7,7 @@ export const carService = {
 
 
 // import axiosService from "./axios.service";
-// import {urls} from "../configs/urls";
+// import {urls} from "../../configs/urls";
 //
 // export const carService = {
 //     create:(car)=>axiosService.post(urls.cars,car).then(value => value.data),

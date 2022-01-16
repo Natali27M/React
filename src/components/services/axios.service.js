@@ -8,7 +8,7 @@ export const axiosService = axios.create({
 
 
 // import axios from "axios";
-// import baseURL from "../configs/urls";
+// import baseURL from "../../configs/urls";
 //
 // const axiosService = axios.create({
 //     baseURL

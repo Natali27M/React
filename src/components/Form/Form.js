@@ -20,8 +20,8 @@ export default Form;
 // import {useForm} from "react-hook-form";
 // import {joiResolver} from "@hookform/resolvers/joi";
 //
-// import {carService} from "../../services/car.service";
-// import {CarValidator} from "../../validators/car.validator";
+// import {carService} from "../services/car.service";
+// import {CarValidator} from "../validators/car.validator";
 //
 // const Form = ({update}) => {
 //     const [formError, setFormError] = useState({});
