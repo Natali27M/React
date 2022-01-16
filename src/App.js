@@ -1,18 +1,35 @@
 // import './App.css';
-// // import Form from "./components/Form/Form";
-// // import Cars from "./components/Cars/Cars";
+import Form from "./components/Form/Form";
+import Cars from "./components/Cars/Cars";
 //
-// const App = () => {
+const App = () => {
+    return (
+        <div>
+            <Form/>
+            <Cars/>
+        </div>
+    );
+};
+
+export default App;
+
+// import Form from "./components/Form/Form";
+// import Cars from "./components/Cars/Cars";
+// import {useState} from "react";
+//
+// function App() {
+//     const [car, setCar] = useState(null);
+//
+//     // const update = data =>{
+//     //     setCar(data)
+//     // }
 //     return (
-//         <div>
-//             <form>
-//                 <div><label><input type="text"/></label></div>
-//             </form>
-//             {/*<Form/>*/}
-//             {/*<Cars/>*/}
-//         </div>
+//         <>
+//             <Form update={setCar}/>
+//             <Cars trigger={car}/>
+//         </>
 //     );
-// };
+// }
 //
 // export default App;
 
