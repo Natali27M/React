@@ -1,9 +1,9 @@
-const Car = ({car}) => {
-    return (
-        <div>
-            {car.model}
-        </div>
-    );
-};
-
-export default Car;
+// const Car = ({car}) => {
+//     return (
+//         <div>
+//             {car.model}
+//         </div>
+//     );
+// };
+//
+// export default Car;
