@@ -7,6 +7,7 @@ const Cars = () => {
     const [cars, setCars] = useState([]);
     useEffect(()=>{
         carService.getAll().then(value => setCars([...cars]));
+        console.log([...cars])
     },[])
     return (
         <div>
