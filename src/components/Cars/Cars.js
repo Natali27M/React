@@ -3,11 +3,12 @@ import {useEffect, useState} from "react";
 import {carService} from "../services/car.service";
 import Car from "../Car/Car";
 
-const Cars = () => {
+const Cars = ({seeUpdateCars}) => {
     const [cars, setCars] = useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         carService.getAll().then(value => setCars([...value]));
-    },[])
+    }, [cars,seeUpdateCars]);
+
     return (
         <div>
             {cars.map(value=><Car key={value.id} car={value}/>)}
@@ -15,26 +16,5 @@ const Cars = () => {
     );
 };
 
+
 export default Cars;
-
-
-// import {useEffect, useState} from "react";
-//
-// import {carService} from "../services/car.service";
-// import Car from "../Car/Car";
-//
-// const Cars = ({trigger}) => {
-//     const [cars, setCars] = useState([]);
-//
-//     useEffect(() => {
-//         carService.getAll().then(value => setCars([...value]))
-//     }, [trigger])
-//
-//     return (
-//         <div>
-//             {cars.map(car => <Car key={car.id} car={car}/>)}
-//         </div>
-//     );
-// };
-//
-// export default Cars;
