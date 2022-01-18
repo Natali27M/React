@@ -6,11 +6,11 @@ import Cars from "./components/Cars/Cars";
 
 const App = () => {
     const [seeUpdateCars, setSeeUpdateCars] = useState(null);
-
+    const [car, setCar]=useState({});
     return (
         <div>
-            <Form setSeeUpdateCars={setSeeUpdateCars}/>
-            <Cars seeUpdateCars={seeUpdateCars}/>
+            <Form setSeeUpdateCars={setSeeUpdateCars} car={car}/>
+            <Cars seeUpdateCars={seeUpdateCars} getCar={setCar}/>
         </div>
     );
 };
