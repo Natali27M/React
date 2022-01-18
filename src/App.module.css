@@ -1,0 +1,13 @@
+.header {
+    min-height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
