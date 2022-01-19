@@ -15,7 +15,7 @@ const UsersPage = () => {
     return (
         <div className={css.styleUsers}>
             <div>
-                <h1>Users</h1>
+                <h1>All users</h1>
                 {users.map(user => <User key={user.id} user={user}/>)}
             </div>
             <div>

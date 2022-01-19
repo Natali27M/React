@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-const User = ({user: {id,name,username}}) => {
+const User = ({user: {id, name}}) => {
     return (
         <div>
             <Link to={id.toString()}>
