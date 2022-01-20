@@ -1,10 +1,7 @@
 import {Routes, Route} from "react-router-dom";
 
-import UsersPage from "./pages/UsersPage/UsersPage";
-import PostsPage from "./pages/PostsPage/PostsPage";
+import {UsersPage, PostCommentsPage, PostsPage, SingleUserPage, UserPostsPage, SinglePostPage} from "./pages"
 import Layout from "./components/Layout/Layout";
-import SingleUserPage from "./pages/SinglePostPage/SingleUserPage";
-import SingleUserPostsPage from "./pages/SinglePostPage/SingleUserPostsPage";
 
 
 const App = () => {
@@ -14,10 +11,14 @@ const App = () => {
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'users'} element={<UsersPage/>}>
                         <Route path={':id'} element={<SingleUserPage/>}>
-                            <Route path={'posts'} element={<SingleUserPostsPage/>}/>
+                            <Route path={'posts'} element={<UserPostsPage/>}/>
                         </Route>
                     </Route>
-                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}>
+                        <Route path={':id'} element={<SinglePostPage/>}>
+                            <Route path={'comments'} element={<PostCommentsPage/>}/>
+                        </Route>
+                    </Route>
                 </Route>
             </Routes>
         </div>

@@ -1,9 +1,8 @@
-import {Outlet, useParams,Link} from "react-router-dom";
+import {Outlet, useParams, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {userService} from "../../services/user.service";
+
 import css from "./Single.module.css";
-import {postService} from "../../services/post.service";
-import SingleUserPostsPage from "./SingleUserPostsPage";
+import {userService} from "../../services/user.service";
 
 
 const SingleUserPage = () => {
@@ -15,9 +14,9 @@ const SingleUserPage = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className={css.styleUser}>
             {user && (
-                <div className={css.userStyle}>
+                <div>
                     <div>
                         <h1>User</h1>
                         <div>Id : {id}</div>
@@ -32,7 +31,9 @@ const SingleUserPage = () => {
                         </div>
                         <div>Phone : {user.phone}</div>
                         <div>Website : {user.website}</div>
-                        <button onClick={()=>postService.getAll().then(SingleUserPostsPage)}>Posts user</button>
+                        <Link to={'posts'} state={user}>
+                            <button>Posts user</button>
+                        </Link>
                     </div>
                     <div>
                         <Outlet/>
@@ -44,4 +45,4 @@ const SingleUserPage = () => {
     );
 };
 
-export default SingleUserPage;
+export {SingleUserPage};
