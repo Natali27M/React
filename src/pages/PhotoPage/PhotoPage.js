@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {userService} from "../../services/users.service";
 import {Photo} from "../../components";
 
+
 const PhotoPage = () => {
     const {id} = useParams();
     const [photos, setPhotos] = useState([]);

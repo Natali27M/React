@@ -9,6 +9,7 @@ const Layout = () => {
                 <NavLink to="/users">Users</NavLink>
                 <NavLink to="/posts">Posts</NavLink>
             </div>
+
             <div>
                 <Outlet/>
             </div>

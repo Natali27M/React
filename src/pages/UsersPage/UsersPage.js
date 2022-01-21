@@ -19,6 +19,7 @@ const UsersPage = () => {
                 <h1>All users</h1>
                 {users.map(user => <User key={user.id} user={user}/>)}
             </div>
+
             <div>
                 <Outlet/>
             </div>

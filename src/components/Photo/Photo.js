@@ -1,5 +1,6 @@
 import css from "./photo.module.css";
 
+
 const Photo = ({photo}) => {
     const {id, title, url} = photo;
 

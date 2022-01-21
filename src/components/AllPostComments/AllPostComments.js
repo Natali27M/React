@@ -1,5 +1,6 @@
 import css from "./AllPostComments.module.css";
 
+
 const AllPostComments = ({comment}) => {
     const {id,name,email,body} = comment;
 

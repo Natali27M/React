@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import css from "./SinglePage.module.css";
 import {postService} from "../../services/posts.service";
 
+
 const SinglePostPage = () => {
     const {id} = useParams();
     const [post,setPost] = useState(null);
@@ -23,6 +24,7 @@ const SinglePostPage = () => {
                         <div>Body : {post.body}</div>
                         <Link to={'comments'} state={post}><button>Post comments</button></Link>
                     </div>
+
                     <div className={css.styleSingle}>
                         <Outlet/>
                     </div>

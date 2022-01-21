@@ -1,6 +1,7 @@
 const AllUserPosts = ({post}) => {
     const {id, title,body} = post;
 
+
     return (
         <div>
             <p>Id : {id}</p>

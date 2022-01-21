@@ -15,3 +15,4 @@ const Album = ({album}) => {
 };
 
 export {Album};
+

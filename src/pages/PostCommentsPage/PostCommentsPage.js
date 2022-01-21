@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {commentsService} from "../../services/comments.service";
 import {AllPostComments} from "../../components";
 
+
 const PostCommentsPage = () => {
     const {id} = useParams();
     const [comments, setComment] = useState([]);

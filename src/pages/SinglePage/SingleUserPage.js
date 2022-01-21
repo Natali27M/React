@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import css from "./SinglePage.module.css";
 import {userService} from "../../services/users.service";
 
+
 const SingleUserPage = () => {
     const {id} = useParams();
     const [user,setUser] = useState(null);
@@ -34,6 +35,7 @@ const SingleUserPage = () => {
                             <button>User posts</button>
                         </Link>
                     </div>
+
                     <div className={css.styleSingle}>
                         <Outlet/>
                     </div>

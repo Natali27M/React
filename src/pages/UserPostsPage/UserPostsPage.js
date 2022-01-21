@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {postService} from "../../services/posts.service";
 import {AllUserPosts} from "../../components";
 
+
 const UserPostsPage = () => {
     const {state: {id}} = useLocation();
     const [userPost,setUserPost] = useState([]);

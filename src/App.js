@@ -8,6 +8,7 @@ const App = () => {
     return (
         <div>
             <Routes>
+
                 <Route path={'/'} element={<Layout/>}>
                     <Route path={'users'} element={<UsersPage/>}>
                         <Route path={':id'} element={<SingleUserPage/>}>
@@ -17,12 +18,14 @@ const App = () => {
                             <Route path={':albumId/photos'} element={<PhotoPage/>}/>
                         </Route>
                     </Route>
+
                     <Route path={'posts'} element={<PostsPage/>}>
                         <Route path={':id'} element={<SinglePostPage/>}>
                             <Route path={'comments'} element={<PostCommentsPage/>}/>
                         </Route>
                     </Route>
                 </Route>
+
             </Routes>
         </div>
     );
