@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    height: 70px;
+}
+.header a {
+    font-size: 30px;
+    color: silver;
+    text-decoration: none;
+}
+.header a[class='active'] {
+    text-decoration: underline;
+    color: deepskyblue;
+}

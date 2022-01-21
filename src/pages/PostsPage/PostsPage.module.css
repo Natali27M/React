@@ -1,0 +1,10 @@
+.stylePosts {
+    display: flex;
+    justify-content: space-around;
+}
+.stylePostTitle {
+    width: 50%;
+}
+.styleCommentsPost {
+    width: 50%;
+}

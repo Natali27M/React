@@ -1,0 +1,11 @@
+.styleUsers {
+    display: flex;
+    justify-content: space-around;
+}
+.styleAllUsers {
+    width: 30%;
+}
+.styleAllUsers div[class='active'] {
+    text-decoration: underline;
+    color: red;
+}
