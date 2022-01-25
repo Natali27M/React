@@ -4,6 +4,7 @@ import css from "./Episode.module.css";
 
 const Episode = ({episodeDetails}) => {
     const {name, episode, air_date} = episodeDetails;
+
     return (
             <div className={css.styleEpisode}>
                 <h4>{name}</h4>

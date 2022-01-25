@@ -2,15 +2,19 @@ import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router-dom";
 
 import EpisodeCharactersPicture from "../../components/EpisodeCharactersPicture/EpisodeCharactersPicture";
+import {charactersService} from "../../services/characters.service";
 
 const EpisodeDetailsPage = () => {
     const {state : {characters}} = useLocation()
     const [character, setCharacter] = useState([]);
 
-    useEffect(()=>{
-        setCharacter(characters);
-    },[])
-    character.map(xxx=>console.log(xxx))
+    useEffect(() => {
+        characters.map(value => {
+                const id = value.slice(value.lastIndexOf('/') + 1)
+                charactersService.getCharacterById(id).then(value => setCharacter([...character, value.data]));
+            }
+        );
+    }, []);
     return (
         <div>
             details

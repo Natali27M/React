@@ -6,7 +6,7 @@ const EpisodeCharactersPicture = ({character}) => {
     return (
         <div>
             <div>{character.name}</div>
-            {/*<img src={character.image} alt={character.name}/>*/}
+            <img src={character.image} alt={character.name}/>
         </div>
     );
 };
