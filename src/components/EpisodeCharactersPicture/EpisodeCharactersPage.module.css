@@ -1,0 +1,11 @@
+.characterOneStyle {
+    width: 20%;
+    border: 1px solid black;
+    margin: 5px;
+}
+.characterOneStyle img {
+    width: 100%;
+}
+.characterOneStyle h4{
+    margin: 0;
+}

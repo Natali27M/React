@@ -2,3 +2,8 @@
     height: 30px;
     background: deepskyblue;
 }
+.stylePage {
+    height: calc(100vh - 30px);
+    overflow: hidden;
+    overflow-y: auto;
+}

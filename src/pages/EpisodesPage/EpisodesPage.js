@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Outlet} from "react-router-dom";
 
 import {episodeService} from "../../services/episode.service";
-import Episode from "../../components/Episode/Episode";
+import {Episode} from "../../components";
 import css from "./EpisodesPage.module.css";
 
 const EpisodesPage = () => {
@@ -28,14 +28,17 @@ const EpisodesPage = () => {
 
     return (
         <div>
+            <h1 className={css.headerTwo}>Pick and Morty episodes!</h1>
             <div className={css.episodesPageStyle}>
                 {episodes.map(episode => <Episode key={episode.id} episodeDetails={episode}/>)}
             </div>
-            <button onClick={prev}>prev</button>
-            <button onClick={next}>next</button>
+            <div className={css.buttonsStyle}>
+                <button className={css.buttonStyle} onClick={prev}>prev</button>
+                <button className={css.buttonStyle} onClick={next}>next</button>
+            </div>
             <Outlet/>
         </div>
     );
 };
 
-export default EpisodesPage;
+export {EpisodesPage};

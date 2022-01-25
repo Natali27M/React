@@ -1,9 +1,7 @@
 import {Routes,Route} from "react-router-dom";
 
-import './App.css';
 import {Layout} from './components';
-import EpisodesPage from "./pages/EpisodesPage/EpisodesPage";
-import EpisodeDetailsPage from "./pages/EpisodeDetailsPage/EpisodeDetailsPage";
+import {EpisodesPage, EpisodeDetailsPage} from "./pages";
 
 const App = () => {
     return (

@@ -15,4 +15,4 @@ const Episode = ({episodeDetails}) => {
     );
 };
 
-export default Episode;
+export {Episode};

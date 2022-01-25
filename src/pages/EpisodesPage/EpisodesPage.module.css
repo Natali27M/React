@@ -3,3 +3,19 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.buttonsStyle {
+    display: flex;
+    justify-content: center;
+}
+.buttonStyle {
+    width: 100px;
+    margin: 5px;
+    background: silver;
+}
+.headerTwo {
+    background: #8d8b8b;
+    height: 70px;
+    margin: 0;
+    text-align: center;
+    padding-top: 20px;
+}
