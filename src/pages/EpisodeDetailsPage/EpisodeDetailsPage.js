@@ -9,12 +9,13 @@ const EpisodeDetailsPage = () => {
     const [character, setCharacter] = useState([]);
 
     useEffect(() => {
-        characters.map(value => {
-                const id = value.slice(value.lastIndexOf('/') + 1)
-                charactersService.getCharacterById(id).then(value => setCharacter([...character, value.data]));
+        characters.map(value =>
+            {const id = value.slice(value.lastIndexOf('/') + 1);
+            charactersService.getCharacterById(id).then(value => setCharacter([...character, value.data]));
+                // setCharacter((prevState) => [...prevState, value]));
             }
         );
-    }, []);
+    }, [character]);
     return (
         <div>
             details
