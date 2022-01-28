@@ -1,0 +1,18 @@
+.styleCatsDogs {
+    display: flex;
+    justify-content: space-between;
+}
+.styleForms {
+    display: flex;
+    justify-content: space-around;
+}
+.styleOneCatDog {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.styleBoxCatsDogs {
+    width: 50%;
+}
