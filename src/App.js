@@ -1,6 +1,4 @@
 import {useReducer, useRef} from "react";
-import {type} from "@testing-library/user-event/dist/type";
-import NewCatsDogs from "./components/NewCatsDogs/NewCatsDogs";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -8,26 +6,37 @@ const reducer = (state, action) => {
             if (action.target === 'cats') {
                 return {...state, cats: [...state.cats, action.payload]};
             }
-            return state
+            return state;
+
         case 'del':
             if (action.target === 'cats') {
                 return {...state, cats: state.cats.filter(cat => cat.id !== action.payload)};
             }
             return state;
+
         default :
             throw new Error('Error');
     }
 };
+
 const App = () => {
     const [state, dispatch] = useReducer(reducer, {cats: [], dogs: []});
-    const inputCatValue = useRef()
+    const inputCatValue = useRef();
+    const inputDogValue = useRef();
 
     const addCats = (e) => {
         e.preventDefault();
         const newCat = inputCatValue.current.value;
-
         dispatch({type: 'add', target: 'cats', payload: {name: newCat, id: new Date().getTime()}});
+        inputCatValue.current.value = '';
         console.log(state);
+    };
+
+    const addDogs = (e) => {
+        e.preventDefault();
+        const newDog = inputDogValue.current.value;
+        dispatch({type: 'add', target: 'dogs', payload: {name: newDog, id: new Date().getTime()}});
+        inputDogValue.current.value = '';
     }
 
     const del = (id) => {
@@ -37,9 +46,9 @@ const App = () => {
     return (
         <div>
             <form>
-                <label>Add cat : <input type="text" name={'cats'} ref={inputCatValue}/></label>
+                <label>Add cats : <input type="text" name={'cats'} ref={inputCatValue}/></label>
                 <button onClick={addCats}>Save</button>
-                <label>Add cat : <input type="text"/></label>
+                <label>Add dogs : <input type="text" name={'dogs'}/></label>
                 <button>Save</button>
             </form>
             {state.cats.map(cat => <div key={cat.id}>{cat.name}
