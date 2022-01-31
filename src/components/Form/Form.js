@@ -1,65 +1,56 @@
 import {useForm} from "react-hook-form";
 import {useDispatch,useSelector} from "react-redux";
+import {useEffect} from "react";
+import {joiResolver} from "@hookform/resolvers/joi";
 
 import {createCar, updateCarThunk} from "../../store";
+import {carValidator} from "../../validators/car.validator";
+import css from "./Form.module.css"
 
 const Form = () => {
-    const {handleSubmit, register, reset} = useForm();
+    const {handleSubmit, register, reset, setValue, formState: {errors}} = useForm(
+        {resolver: joiResolver(carValidator), mode: 'onTouched'}
+    );
 
     const dispatch = useDispatch();
 
-    const {carId} = useSelector(state => state['carSliceReducer']);
+    const {form} = useSelector(state => state['carSliceReducer']);
+
+    const {id, model, price, year} = form;
+
+    useEffect(() => {
+        if (id) {
+            setValue('model', model);
+            setValue('price', price);
+            setValue('year', year);
+        }
+    }, [id, model, price, setValue, year]);
 
     const submit = (car) => {
-        if(carId){
-            dispatch(updateCarThunk({carId,car}))
-        }else {
-            dispatch(createCar(car))
+        if (id) {
+            dispatch(updateCarThunk({car,id}));
+        } else {
+            dispatch(createCar({car}));
         }
-
-            reset();
-    };
+        reset();
+    }
 
     return (
         <div>
-            <form onSubmit={handleSubmit(submit)}>
+            <form  className={css.formStyle} onSubmit={handleSubmit(submit)}>
                 <label>Model : <input type="text" {...register('model')}/></label>
                 <label>Price : <input type="text" {...register('price')}/></label>
                 <label>Year : <input type="text" {...register('year')}/></label>
-                <button>{carId ? 'Update':'Create'}</button>
+                <button>{!id ? 'Create':'Update'}</button>
+                <div>
+                    {errors.model && <span>{errors.model.message}</span>}
+                    {errors.price && <span>{errors.price.message}</span>}
+                    {errors.year && <span>{errors.year.message}</span>}
+                </div>
             </form>
+            <hr/>
         </div>
     );
 };
 
 export {Form};
-
-
-// import {useForm} from "react-hook-form";
-// import {useDispatch} from "react-redux";
-//
-// import {createCar} from "../../store";
-//
-// const Form = () => {
-//     const {handleSubmit, register, reset} = useForm();
-//
-//     const dispatch = useDispatch();
-//
-//     const submit = (data) => {
-//         dispatch(createCar({data}))
-//         reset();
-//     };
-//
-//     return (
-//         <div>
-//             <form onSubmit={handleSubmit(submit)}>
-//                 <label>Model : <input type="text" {...register('model')}/></label>
-//                 <label>Price : <input type="text" {...register('price')}/></label>
-//                 <label>Year : <input type="text" {...register('year')}/></label>
-//                 <button>Save</button>
-//             </form>
-//         </div>
-//     );
-// };
-//
-// export {Form};

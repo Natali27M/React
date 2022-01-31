@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    background-color: deepskyblue;
+
+}
+.header a {
+    color: black;
+    font-size: 30px;
+}
+.outlet {
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    overflow-y: auto;
+}

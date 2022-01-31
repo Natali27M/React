@@ -1,12 +1,20 @@
-import './App.css';
-import {Cars, Form} from "./components";
+import {Routes,Route} from "react-router-dom";
+
+import {Layout} from "./components";
+import {CarsPage, UsersPage, PostsPage, CommentsPage} from "./pages";
 
 const App = () => {
 
     return (
         <div>
-            <Form/>
-            <Cars/>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'cars'} element={<CarsPage/>}/>
+                    <Route path={'users'} element={<UsersPage/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'comments'} element={<CommentsPage/>}/>
+                </Route>
+            </Routes>
         </div>
     );
 };
