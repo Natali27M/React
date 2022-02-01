@@ -1,16 +1,21 @@
 import {useDispatch} from "react-redux";
 
-import {deleteText} from "../../store";
-import css from "./Sentence.module.css"
+import {changeStatus, deleteText} from "../../store";
+import css from "./Sentence.module.css";
 
 const Sentence = ({sentence}) => {
-    const {id, text} = sentence;
+
+    const {id, text, status} = sentence;
+
     const dispatch = useDispatch();
+
+
+
     return (
-        <div className={css.styleCheck}>
-            <input type="checkbox"/>
-            {text}
-            <button onClick={()=>dispatch(deleteText({id}))}>Delete</button>
+        <div>
+                <input type="checkbox" value={status} onChange={()=>dispatch(changeStatus({id}))}/>
+                <div className={status ? css.styleCheck : ""}>{text}</div>
+                <button onClick={() => dispatch(deleteText({id}))}>Delete</button>
         </div>
     );
 };

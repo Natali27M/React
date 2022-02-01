@@ -1,6 +1,5 @@
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
-import {useRef} from "react";
 
 import {addText} from "../../store";
 
@@ -10,14 +9,14 @@ const Form = () => {
     const dispatch = useDispatch();
 
     const submit=(data)=>{
-        dispatch(addText({data}));
+        dispatch(addText({data:{...data, status:false}}));
         reset();
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit(submit)}>
-                <input type="text" {...register('text')}/>
+                <input type="text" {...register("text")}/>
                 <button>Save</button>
             </form>
         </div>

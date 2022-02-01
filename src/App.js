@@ -1,9 +1,9 @@
-import './App.css';
-import {Form, Text} from "./components";
+import {Form, Header, Text} from "./components";
 
 const App = () => {
     return (
         <div>
+            <Header/>
             <Form/>
             <Text/>
         </div>
