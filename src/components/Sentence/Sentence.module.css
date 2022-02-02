@@ -1,3 +1,11 @@
 .styleCheck {
     text-decoration: line-through;
 }
+.styleSentence {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+}

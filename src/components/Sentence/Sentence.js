@@ -12,7 +12,7 @@ const Sentence = ({sentence}) => {
 
 
     return (
-        <div>
+        <div className={css.styleSentence}>
                 <input type="checkbox" value={status} onChange={()=>dispatch(changeStatus({id}))}/>
                 <div className={status ? css.styleCheck : ""}>{text}</div>
                 <button onClick={() => dispatch(deleteText({id}))}>Delete</button>
