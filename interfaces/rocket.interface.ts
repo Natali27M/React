@@ -20,16 +20,12 @@ interface IRocket {
     rocket_name: string;
     first_stage: IFirst_stage;
     second_stage: {
-        payloads: [
-            IPayloads
-        ];
-    }
+        payloads: IPayloads[];
+    };
 }
 
 interface IFirst_stage {
-    cores: [
-        ICores
-    ];
+    cores: ICores[];
 }
 
 interface ICores{
@@ -47,3 +43,4 @@ interface IPayloads{
     payload_mass_kg: number;
     payload_mass_lbs: number;
 }
+

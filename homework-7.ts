@@ -36,4 +36,7 @@ const rocket: IRockets = {
     }
 };
 
+console.log(rocket);
+
+
 
