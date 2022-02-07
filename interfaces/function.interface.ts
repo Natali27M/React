@@ -7,11 +7,11 @@ export interface IUser{
 export function sum(a:number,b:number):number{
     return a + b;
 }
-export function showSum(a:number,b:number){
+export function showSum(a:number,b:number):void{
     console.log(a + b);
 }
 
-export function incAge(someUser:IUser, inc:number):object{
+export function incAge(someUser:IUser, inc:number):IUser{
     someUser.age += inc;
     return someUser;
 }
